@@ -82,6 +82,7 @@ def payer():
     operateur = request.form['operateur']
     id_client = request.form['id_client']
     if operateur == 'wave':
+    import urllib.parse
     message = f"Bonjour, je veux payer {montant} FCFA pour mes diamants FF ID: {id_client}"
     return redirect(f"https://wa.me/22509456272?text={urllib.parse.quote(message)}")
     elif operateur == 'mtn':
