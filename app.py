@@ -25,7 +25,11 @@ label{display:block;text-align:left;margin-top:15px;color:#00ffff}
 </style></head>
 <body>
 <img src="logo.png" alt="RAZAELE" style="width:150px;margin:20px auto;display:block;">
-<h1>🔥 PAIEMENT RAZAELE STORE 🔥</h1>
+<div style="text-align:right;margin-bottom:10px;">
+  <button onclick="switchLang()" style="padding:8px 12px;border:none;border-radius:6px;background:#eee;cursor:pointer;">🇫🇷 / 🇬🇧</button>
+</div>
+<img src="logo.png" alt="RAZAELE" style="width:150px;margin:10px auto 20px;display:block;">
+<h1 id="titre">💎 PAIEMENT RAZAELE STORE 💎</h1>
 <form action="/payer" method="POST">
 <label>1. Choisis ton pack :</label>
 <select name="montant" required>
@@ -41,6 +45,7 @@ label{display:block;text-align:left;margin-top:15px;color:#00ffff}
 <button type="submit" name="operateur" value="wave" class="btn btn-wave">Payer avec Wave</button>
 <button type="submit" name="operateur" value="mtn" class="btn btn-mtn">Payer avec MTN Money</button>
 <button type="submit" name="operateur" value="moov" class="btn btn-moov">Payer avec Moov Money</button>
+<a href="https://wa.me/22509456272?text=Bonjour%20RAZAELE%20STORE" target="_blank" style="display:block;padding:16px;margin:12px 0;color:white;text-decoration:none;border-radius:8px;font-weight:bold;background-color:#25D366;text-align:center;">💬 Contacter sur WhatsApp</a>
 </form></body></html>
 '''
 
