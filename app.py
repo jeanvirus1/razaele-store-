@@ -82,9 +82,8 @@ def payer():
     operateur = request.form['operateur']
     id_client = request.form['id_client']
     if operateur == 'wave':
-        nom = urllib.parse.quote(MON_NOM_WAVE)
-        note = urllib.parse.quote(f"Diamants FF ID:{id_client}")
-        return redirect(f"https://send.wave.com/transfer?amount={montant}&recipient={MON_NUMERO_WAVE}&name={nom}&note={note}")
+    message = f"Bonjour, je veux payer {montant} FCFA pour mes diamants FF ID: {id_client}"
+    return redirect(f"https://wa.me/22509456272?text={urllib.parse.quote(message)}")
     elif operateur == 'mtn':
         return redirect(f"tel:*133*1*{MON_NUMERO_MTN}*{montant}#")
     elif operateur == 'moov':
