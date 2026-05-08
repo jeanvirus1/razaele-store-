@@ -24,6 +24,7 @@ input,select{width:100%;padding:15px;margin:10px 0;border-radius:10px;border:2px
 label{display:block;text-align:left;margin-top:15px;color:#00ffff}
 </style></head>
 <body>
+<img src="logo.png" alt="RAZAELE" style="width:150px;margin:20px auto;display:block;">
 <h1>🔥 PAIEMENT RAZAELE STORE 🔥</h1>
 <form action="/payer" method="POST">
 <label>1. Choisis ton pack :</label>
