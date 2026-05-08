@@ -24,7 +24,6 @@ input,select{width:100%;padding:15px;margin:10px 0;border-radius:10px;border:2px
 label{display:block;text-align:left;margin-top:15px;color:#00ffff}
 </style></head>
 <body>
-<img src="logo.png" alt="RAZAELE" style="width:150px;margin:20px auto;display:block;">
 <div style="text-align:right;margin-bottom:10px;">
   <button onclick="switchLang()" style="padding:8px 12px;border:none;border-radius:6px;background:#eee;cursor:pointer;">🇫🇷 / 🇬🇧</button>
 </div>
@@ -46,7 +45,31 @@ label{display:block;text-align:left;margin-top:15px;color:#00ffff}
 <button type="submit" name="operateur" value="mtn" class="btn btn-mtn">Payer avec MTN Money</button>
 <button type="submit" name="operateur" value="moov" class="btn btn-moov">Payer avec Moov Money</button>
 <a href="https://wa.me/22509456272?text=Bonjour%20RAZAELE%20STORE" target="_blank" style="display:block;padding:16px;margin:12px 0;color:white;text-decoration:none;border-radius:8px;font-weight:bold;background-color:#25D366;text-align:center;">💬 Contacter sur WhatsApp</a>
-</form></body></html>
+<p style="font-size:13px;color:#666;text-align:center;margin:15px 0 5px;">
+  🔒 Paiement 100% sécurisé | ✅ Service client 24/7 | ⚡ Livraison instantanée
+</p>
+<div style="margin:25px 0;padding:15px;background:#f8f9fa;border-radius:10px;border-left:4px solid #25D366;">
+  <p style="margin:0 0 8px;font-weight:bold;">⭐⭐⭐⭐⭐ Kouadio M.</p>
+  <p style="margin:0;font-size:14px;color:#444;">"Reçu mes 520 diamants en 2min chrono. Service au top, je recommande !"</p>
+</div>
+
+<div style="margin:15px 0;padding:15px;background:#f8f9fa;border-radius:10px;border-left:4px solid #25D366;">
+  <p style="margin:0 0 8px;font-weight:bold;">⭐⭐⭐⭐⭐ Aïcha K.</p>
+  <p style="margin:0;font-size:14px;color:#444;">"J'avais peur d'une arnaque mais tout est arrivé. Merci RAZAELE STORE"</p>
+</div>
+</form><script>
+function switchLang() {
+  let titre = document.getElementById('titre');
+  if (titre.innerText.includes('PAIEMENT')) {
+    titre.innerText = '💎 RAZAELE STORE PAYMENT 💎';
+    document.querySelector('label').innerText = 'Choose your pack';
+  } else {
+    titre.innerText = '💎 PAIEMENT RAZAELE STORE 💎';
+    document.querySelector('label').innerText = 'Choisis ton pack';
+  }
+}
+</script>
+</body></html>
 '''
 
 @app.route('/')
