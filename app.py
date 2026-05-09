@@ -57,16 +57,17 @@ label{display:block;text-align:left;margin-top:15px;color:#00ffff}
   <p style="margin:0 0 8px;font-weight:bold;">⭐⭐⭐⭐⭐ Aïcha K.</p>
   <p style="margin:0;font-size:14px;color:#444;">"J'avais peur d'une arnaque mais tout est arrivé. Merci RAZAELE STORE"</p>
 </div>
-</form><script>
+</form>
+<script>
 function switchLang() {
-  let titre = document.getElementById('titre');
-  if (titre.innerText.includes('PAIEMENT')) {
-    titre.innerText = '💎 RAZAELE STORE PAYMENT 💎';
-    document.querySelector('label').innerText = 'Choose your pack';
-  } else {
-    titre.innerText = '💎 PAIEMENT RAZAELE STORE 💎';
-    document.querySelector('label').innerText = 'Choisis ton pack';
-  }
+    let titre = document.getElementById('titre');
+    if (titre.innerText.includes('PAIEMENT')) {
+        titre.innerText = '💎 RAZAELE STORE PAYMENT 💎';
+        document.querySelector('label').innerText = 'Choose your pack';
+    } else {
+        titre.innerText = '💎 PAIEMENT RAZAELE STORE 💎';
+        document.querySelector('label').innerText = 'Choisis ton pack';
+    }
 }
 </script>
 </body></html>
@@ -79,16 +80,21 @@ def home():
 @app.route('/payer', methods=['POST'])
 def payer():
     montant = request.form['montant']
-    operateur = request.form['operateur']
     id_client = request.form['id_client']
+    operateur = request.form['operateur']
+    
     if operateur == 'wave':
-    import urllib.parse
-    message = f"Bonjour, je veux payer {montant} FCFA pour mes diamants FF ID: {id_client}"
-    return redirect(f"https://wa.me/22509456272?text={urllib.parse.quote(message)}")
+        import urllib.parse
+        message = f"Bonjour, je veux payer {montant} FCFA pour mes diamants FF ID: {id_client}"
+        return redirect(f"https://wa.me/22509456272?text={urllib.parse.quote(message)}")
+    
     elif operateur == 'mtn':
-        return redirect(f"tel:*133*1*{MON_NUMERO_MTN}*{montant}#")
+        return redirect(f"https://momodeveloper.mtn.com?amount={montant}")
+    
     elif operateur == 'moov':
-        return redirect(f"tel:*155*1*1*{MON_NUMERO_MOOV}*{montant}#")
+        return redirect(f"https://moovmoney.com?amount={montant}")
+    
+    return "Operateur non valide"
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
